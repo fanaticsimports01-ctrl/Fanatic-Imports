@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fanatic Imports</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#080808;color:#e0e0e0;font-family:'Barlow',sans-serif;min-height:100vh}
+.hero{text-align:center;padding:60px 24px 40px}
+.logo{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#1a1a1a,#2a2a2a);border:1px solid rgba(200,200,200,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;overflow:hidden}
+.logo::after{content:'';position:absolute;inset:0;border-radius:50%;animation:spin 3s linear infinite;background:conic-gradient(from 0deg,transparent 0deg,rgba(200,200,200,.08) 55deg,transparent 90deg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.logo-sweep{position:absolute;width:50%;height:1px;top:50%;left:50%;transform-origin:left;background:linear-gradient(90deg,transparent,rgba(200,200,200,.8));animation:spin 3s linear infinite;z-index:1}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:40px;background:linear-gradient(135deg,#f4f4f4,#c0c0c0,#777);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;z-index:2;position:relative}
+h1{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:4px;background:linear-gradient(135deg,#f4f4f4,#c0c0c0,#707070);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sub{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,200,200,.4);margin-top:6px}
+.divider{width:1px;height:40px;background:linear-gradient(180deg,transparent,#c0c0c0,transparent);margin:24px auto}
+.welcome{background:#101010;border:.5px solid rgba(200,200,200,.12);border-radius:16px;padding:24px;margin:0 20px 20px;position:relative;overflow:hidden}
+.welcome::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,200,200,.3),transparent)}
+.welcome h2{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:#f4f4f4;margin-bottom:10px}
+.welcome p{font-size:14px;line-height:1.7;color:rgba(200,200,200,.7)}
+.welcome strong{color:#f4f4f4}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 20px 20px}
+.feat{background:#101010;border:.5px solid rgba(200,200,200,.1);border-radius:12px;padding:14px}
+.feat-icon{font-size:20px;margin-bottom:6px}
+.feat-title{font-size:12px;font-weight:600;color:#e0e0e0}
+.feat-desc{font-size:11px;color:rgba(200,200,200,.4);margin-top:3px}
+.section-label{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(200,200,200,.3);text-align:center;margin:0 20px 14px}
+.agents{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 20px 40px}
+.agent{background:#101010;border:.5px solid rgba(200,200,200,.12);border-radius:20px;padding:20px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;position:relative;overflow:hidden}
+.agent::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,200,200,.25),transparent)}
+.avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#1a1a1a,#2a2a2a);border:1.5px solid rgba(200,200,200,.18);display:flex;align-items:center;justify-content:center;position:relative}
+.avatar-letter{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#c0c0c0}
+.online{position:absolute;bottom:2px;right:2px;width:11px;height:11px;border-radius:50%;background:#25D366;border:2px solid #101010;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 4px rgba(37,211,102,.5)}50%{box-shadow:0 0 10px rgba(37,211,102,.9)}}
+.agent-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:#f4f4f4}
+.agent-role{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,200,200,.35);margin-top:-6px}
+.btn{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:10px;background:#25D366;border-radius:10px;font-size:13px;font-weight:600;color:#fff}
+.btn svg{width:15px;height:15px}
+.footer{text-align:center;padding:32px 20px 48px;border-top:.5px solid rgba(200,200,200,.07)}
+.footer-name{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:4px;background:linear-gradient(135deg,#f4f4f4,#c0c0c0,#666);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,200,200,.2)}
+</style>
+</head>
+<body>
+<div class="hero">
+<div class="logo"><div class="logo-sweep"></div><span class="logo-text">FI</span></div>
+<h1>Fanatic Imports</h1>
+<p class="sub">Camisas de Time &amp; Seleções</p>
+<div class="divider"></div>
+</div>
+<div class="welcome">
+<h2>👋 Bem-vindo!</h2>
+<p>Aqui na <strong>Fanatic Imports</strong> você encontra camisas de times e seleções do mundo inteiro, com <strong>qualidade garantida</strong>, entrega para todo o Brasil e atendimento direto pelo WhatsApp.<br><br>Me chama, me fala o seu time e eu te mando o catálogo na hora! ⚽🔥</p>
+</div>
+<div class="grid">
+<div class="feat"><div class="feat-icon">🌍</div><div class="feat-title">Times do mundo todo</div><div class="feat-desc">Clubes e seleções</div></div>
+<div class="feat"><div class="feat-icon">🚚</div><div class="feat-title">Entrega nacional</div><div class="feat-desc">Todo o Brasil</div></div>
+<div class="feat"><div class="feat-icon">✅</div><div class="feat-title">Qualidade garantida</div><div class="feat-desc">Produto como na foto</div></div>
+<div class="feat"><div class="feat-icon">⚡</div><div class="feat-title">Resposta rápida</div><div class="feat-desc">Atendimento no WhatsApp</div></div>
+</div>
+<p class="section-label">Fale com nossos atendentes</p>
+<div class="agents">
+<a class="agent" href="https://wa.me/5579988492904?text=Ol%C3%A1%20Carlos!%20Vi%20a%20Fanatic%20Imports%20e%20quero%20ver%20o%20cat%C3%A1logo!%20%F0%9F%91%95" target="_blank">
+<div class="avatar"><span class="avatar-letter">C</span><div class="online"></div></div>
+<div class="agent-name">Carlos</div><div class="agent-role">Atendente</div>
+<div class="btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</div>
+</a>
+<a class="agent" href="https://wa.me/5579996834445?text=Ol%C3%A1%20Vitor!%20Vi%20a%20Fanatic%20Imports%20e%20quero%20ver%20o%20cat%C3%A1logo!%20%F0%9F%91%95" target="_blank">
+<div class="avatar"><span class="avatar-letter">V</span><div class="online"></div></div>
+<div class="agent-name">Vitor</div><div class="agent-role">Atendente</div>
+<div class="btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</div>
+</a>
+</div>
+<div class="footer"><p class="footer-name">Fanatic Imports</p><p class="footer-sub">Camisas de Time · Todo o Brasil</p></div>
+</body>
+</html>
