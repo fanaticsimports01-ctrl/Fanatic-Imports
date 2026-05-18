@@ -2,143 +2,397 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Fanatic Imports</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Fanatic Imports — Camisas Oficiais</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-:root{--black:#080808;--black2:#101010;--silver:#c0c0c0;--silver2:#e0e0e0;--silver3:#f4f4f4;--green:#25D366;--dim:rgba(200,200,200,0.12)}
-body{background:var(--black);color:var(--silver2);font-family:'Barlow',sans-serif;overflow-x:hidden}
-#hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px 60px;position:relative}
-.hero-title{font-family:'Bebas Neue';font-size:clamp(52px,15vw,90px);letter-spacing:6px;background:linear-gradient(135deg,#fff,var(--silver),#666);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeUp 1.6s 0.5s cubic-bezier(.16,1,.3,1) both}
-.hero-sub{font-size:13px;font-weight:300;letter-spacing:3.5px;text-transform:uppercase;color:rgba(200,200,200,0.4);margin-top:10px;animation:fadeIn 1.4s 1s ease both}
-.hero-divider{width:1px;height:60px;background:linear-gradient(180deg,transparent,var(--silver),transparent);margin:32px auto 0;animation:fadeIn 1.4s 1.5s ease both}
-section{position:relative;padding:72px 24px;max-width:520px;margin:0 auto}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s,transform 1s}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.sec-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,200,200,0.3);margin-bottom:16px}
-.sec-title{font-family:'Bebas Neue';font-size:48px;line-height:1;letter-spacing:2px;background:linear-gradient(135deg,var(--silver3),var(--silver));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:24px}
-.sec-text{font-size:14px;font-weight:300;line-height:1.7;color:rgba(200,200,200,0.6)}
-.stats-wrap{display:flex;justify-content:center;gap:40px;padding:40px 24px}
-.stat-num{font-family:'Bebas Neue';font-size:56px;line-height:1;background:linear-gradient(135deg,var(--silver3),var(--silver));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,200,200,0.3);margin-top:4px}
-.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.feat-card{background:var(--black2);border:0.5px solid rgba(200,200,200,0.1);border-radius:16px;padding:20px 16px}
-.feat-icon{font-size:24px;display:block;margin-bottom:10px}
-.feat-name{font-size:14px;font-weight:600;color:var(--silver2);margin-bottom:6px}
-.feat-desc{font-size:12px;font-weight:300;color:rgba(200,200,200,0.5);line-height:1.5}
-#team{padding-top:0}
-.team-header{text-align:center;padding:0 24px 32px}
-.agents-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 20px;max-width:520px;margin:0 auto}
-.agent-card{background:var(--black2);border:0.5px solid rgba(200,200,200,0.12);border-radius:20px;padding:28px 14px 20px;display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;position:relative}
-.agent-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;background:var(--black2);border:1.5px solid rgba(200,200,200,0.18)}
-.online{width:14px;height:14px;background:var(--green);border-radius:50%;border:2px solid var(--black2);position:absolute;top:36px;right:calc(50% - 54px);animation:pulse 2s ease-in-out infinite}
-.agent-name{font-size:16px;font-weight:600;color:var(--silver2)}
-.agent-role{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,200,200,0.3)}
-.wa-btn{display:flex;align-items:center;gap:8px;background:var(--green);color:#000;border-radius:50px;padding:10px 20px;font-size:13px;font-weight:600;margin-top:4px}
-.wa-btn svg{width:18px;height:18px}
-footer{text-align:center;padding:48px 24px 60px;border-top:0.5px solid rgba(200,200,200,0.07)}
-.footer-logo{font-family:'Bebas Neue';font-size:28px;letter-spacing:4px;background:linear-gradient(135deg,var(--silver3),var(--silver),#666);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
-.footer-sub{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,200,200,0.2)}
-.thin-divider{width:32px;height:1px;background:var(--silver);margin:0 0 24px;opacity:.35}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-@keyframes pulse{0%,100%{box-shadow:0 0 4px rgba(37,211,102,.5)}50%{box-shadow:0 0 12px rgba(37,211,102,.9)}}
-canvas#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+:root{
+  --black:#080808;--black2:#0f0f0f;--black3:#161616;
+  --silver:#c0c0c0;--silver2:#e0e0e0;--silver3:#f5f5f5;
+  --green:#25D366;--green2:#1aad52;
+  --border:rgba(200,200,200,0.08);
+  --glow:rgba(200,200,200,0.06);
+}
+body{
+  background:var(--black);color:var(--silver2);
+  font-family:'Barlow',sans-serif;overflow-x:hidden;
+  -webkit-tap-highlight-color:transparent;
+}
+canvas#bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.6}
 
-.logo-radar{position:relative;width:140px;height:140px;border-radius:50%;overflow:hidden;border:1px solid rgba(200,200,200,0.15);margin:0 auto 28px;opacity:0;animation:fadeIn 1.8s 0.3s cubic-bezier(.16,1,.3,1) both}
-.logo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.n-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.26);z-index:1}
-.r-ch{position:absolute;width:100%;height:1px;top:50%;left:0;background:rgba(200,200,200,0.1);z-index:2}
-.p-cv{position:absolute;height:100%;width:1px;left:50%;top:0;background:rgba(200,200,200,0.1);z-index:2}
-.r-sweep{position:absolute;width:50%;height:50%;top:0;left:50%;transform-origin:0% 100%;background:linear-gradient(90deg,rgba(200,200,200,0),rgba(200,200,200,0.25));z-index:3;animation:radarSpin 3.5s linear infinite}
-.r-glow{position:absolute;inset:0;background:radial-gradient(circle,rgba(200,200,200,0.08) 0%,transparent 60%);z-index:3;animation:lightBeat 4s ease-in-out infinite}
+/* ─── HERO ─── */
+#hero{
+  position:relative;z-index:2;
+  min-height:100svh;
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;
+  padding:48px 28px 40px;
+  background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(255,255,255,0.03) 0%,transparent 70%);
+}
+#hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px),
+    repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px);
+  pointer-events:none;
+}
+
+/* Logo */
+.logo-ring{
+  position:relative;width:130px;height:130px;
+  border-radius:50%;overflow:hidden;
+  border:1px solid rgba(200,200,200,0.18);
+  margin:0 auto 24px;
+  box-shadow:0 0 60px rgba(200,200,200,0.08),inset 0 0 30px rgba(0,0,0,0.5);
+  opacity:0;animation:fadeUp 1.6s .2s cubic-bezier(.16,1,.3,1) forwards;
+}
+.logo-ring img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.logo-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.22);z-index:1}
+.logo-sweep{
+  position:absolute;width:50%;height:50%;top:0;left:50%;
+  transform-origin:0% 100%;z-index:2;
+  background:linear-gradient(90deg,rgba(200,200,200,0),rgba(200,200,200,0.22));
+  animation:radarSpin 3.8s linear infinite;
+}
+.logo-glow{
+  position:absolute;inset:0;z-index:2;
+  background:radial-gradient(circle,rgba(200,200,200,0.07) 0%,transparent 65%);
+  animation:glowPulse 4s ease-in-out infinite;
+}
+.logo-cross-h{position:absolute;width:100%;height:1px;top:50%;left:0;background:rgba(200,200,200,0.12);z-index:3}
+.logo-cross-v{position:absolute;height:100%;width:1px;left:50%;top:0;background:rgba(200,200,200,0.12);z-index:3}
+
+/* Brand */
+.brand-name{
+  font-family:'Bebas Neue';font-size:clamp(52px,15vw,80px);
+  letter-spacing:8px;line-height:.95;
+  background:linear-gradient(160deg,#ffffff 0%,#d0d0d0 40%,#888 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  opacity:0;animation:fadeUp 1.4s .5s cubic-bezier(.16,1,.3,1) forwards;
+  margin-bottom:6px;
+}
+.brand-tagline{
+  font-size:11px;font-weight:300;letter-spacing:4px;
+  text-transform:uppercase;color:rgba(200,200,200,0.35);
+  opacity:0;animation:fadeIn 1.2s .9s ease forwards;
+  margin-bottom:28px;
+}
+
+/* Stats rápidos */
+.hero-stats{
+  display:flex;gap:32px;justify-content:center;
+  margin-bottom:32px;
+  opacity:0;animation:fadeIn 1s 1.1s ease forwards;
+}
+.h-stat{text-align:center}
+.h-stat-num{
+  font-family:'Bebas Neue';font-size:28px;
+  background:linear-gradient(135deg,#fff,var(--silver));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.h-stat-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,200,200,0.3)}
+
+/* ── CTA Principal — sempre visível ── */
+.hero-cta-box{
+  width:100%;max-width:340px;
+  opacity:0;animation:fadeUp 1s 1.2s cubic-bezier(.16,1,.3,1) forwards;
+}
+.cta-label{
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(200,200,200,0.3);margin-bottom:14px;
+}
+.wa-cta{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--green);color:#000;
+  border-radius:14px;padding:16px 22px;
+  font-size:15px;font-weight:700;text-decoration:none;
+  margin-bottom:10px;
+  box-shadow:0 6px 30px rgba(37,211,102,0.35);
+  transition:transform .15s,box-shadow .15s;
+  border:1px solid rgba(37,211,102,0.4);
+}
+.wa-cta:active{transform:scale(.97);box-shadow:0 3px 15px rgba(37,211,102,0.25)}
+.wa-cta svg{width:20px;height:20px;flex-shrink:0}
+.wa-cta-info{display:flex;flex-direction:column;align-items:flex-start;gap:1px}
+.wa-cta-name{font-size:16px;font-weight:700;line-height:1}
+.wa-cta-sub{font-size:10px;font-weight:400;opacity:.65;letter-spacing:.5px}
+.wa-cta.vitor{background:#000;color:var(--silver2);border:1px solid rgba(200,200,200,0.2);box-shadow:none}
+.online-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:dotPulse 2s ease-in-out infinite;flex-shrink:0}
+.wa-cta.vitor .online-dot{background:var(--silver);box-shadow:0 0 6px var(--silver)}
+
+/* Divider */
+.section-divider{
+  position:relative;z-index:2;
+  display:flex;align-items:center;gap:12px;
+  padding:0 28px;max-width:520px;margin:8px auto;
+}
+.section-divider .line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,200,200,0.12),transparent)}
+.section-divider span{font-size:12px;color:rgba(200,200,200,0.2)}
+
+/* ─── SOBRE ─── */
+section{position:relative;z-index:2;padding:56px 28px;max-width:520px;margin:0 auto}
+.sec-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,200,200,0.3);margin-bottom:12px}
+.sec-title{
+  font-family:'Bebas Neue';font-size:42px;line-height:1;letter-spacing:2px;
+  background:linear-gradient(135deg,var(--silver3),var(--silver));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:20px;
+}
+.sec-text{font-size:14px;font-weight:300;line-height:1.75;color:rgba(200,200,200,0.58)}
+.sec-text strong{color:var(--silver2);font-weight:600}
+.thin-line{width:28px;height:1px;background:var(--silver);opacity:.3;margin:0 0 20px}
+
+/* ─── FEATURES ─── */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.feat-card{
+  background:var(--black2);
+  border:1px solid var(--border);
+  border-radius:16px;padding:20px 16px;
+  transition:border-color .3s;
+}
+.feat-card:hover{border-color:rgba(200,200,200,0.18)}
+.feat-icon{font-size:26px;margin-bottom:10px;display:block}
+.feat-name{font-size:13px;font-weight:600;color:var(--silver2);margin-bottom:5px;line-height:1.3}
+.feat-desc{font-size:11px;font-weight:300;color:rgba(200,200,200,0.42);line-height:1.5}
+
+/* ─── STATS ─── */
+#stats{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.stats-row{display:flex;justify-content:center;gap:0}
+.stat-block{
+  flex:1;text-align:center;padding:28px 8px;
+  border-right:1px solid var(--border);
+}
+.stat-block:last-child{border-right:none}
+.stat-num{
+  font-family:'Bebas Neue';font-size:48px;line-height:1;
+  background:linear-gradient(135deg,#fff,var(--silver));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.stat-plus{font-size:24px;color:var(--silver);opacity:.5;vertical-align:super;font-family:'Bebas Neue'}
+.stat-pct{font-size:24px;color:var(--silver);opacity:.5;font-family:'Bebas Neue'}
+.stat-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,200,200,0.28);margin-top:4px}
+
+/* ─── ATENDENTES ─── */
+.agents-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.agent-card{
+  background:var(--black2);border:1px solid var(--border);
+  border-radius:20px;padding:24px 14px 20px;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  text-decoration:none;position:relative;overflow:hidden;
+  transition:border-color .3s,transform .2s;
+}
+.agent-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(200,200,200,0.2),transparent);
+}
+.agent-card:active{transform:scale(.97)}
+.agent-avatar{
+  width:72px;height:72px;border-radius:50%;
+  background:linear-gradient(135deg,var(--black3),#222);
+  border:1.5px solid rgba(200,200,200,0.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;position:relative;
+}
+.agent-online{
+  position:absolute;bottom:2px;right:2px;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--green);border:2px solid var(--black2);
+  animation:dotPulse 2s ease-in-out infinite;
+}
+.agent-name{font-size:16px;font-weight:600;color:var(--silver2)}
+.agent-role{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,200,200,0.28)}
+.agent-wa{
+  display:flex;align-items:center;gap:7px;
+  background:var(--green);color:#000;
+  border-radius:50px;padding:9px 18px;
+  font-size:12px;font-weight:700;margin-top:4px;
+}
+.agent-wa svg{width:16px;height:16px}
+
+/* ─── FOOTER ─── */
+footer{
+  position:relative;z-index:2;
+  text-align:center;padding:40px 24px 56px;
+  border-top:1px solid var(--border);
+}
+.footer-logo{
+  font-family:'Bebas Neue';font-size:26px;letter-spacing:5px;
+  background:linear-gradient(135deg,var(--silver3),var(--silver),#555);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:6px;
+}
+.footer-sub{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,200,200,0.18)}
+
+/* ─── REVEAL ─── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 @keyframes radarSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-@keyframes lightBeat{0%{opacity:.4}50%{opacity:1}100%{opacity:.4}}
+@keyframes glowPulse{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes dotPulse{0%,100%{box-shadow:0 0 4px var(--green)}50%{box-shadow:0 0 12px var(--green),.0 0 20px rgba(37,211,102,.4)}}
 </style>
 </head>
 <body>
 <canvas id="bg"></canvas>
-<section id="hero" style="z-index:2">
-  <div class="logo-radar">
-<svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%">
-  <defs>
-    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#1a1a1a"/>
-      <stop offset="100%" stop-color="#080808"/>
-    </radialGradient>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="50%" stop-color="#c0c0c0"/>
-      <stop offset="100%" stop-color="#666666"/>
-    </linearGradient>
-  </defs>
-  <circle cx="70" cy="70" r="70" fill="url(#bg)"/>
-  <text x="70" y="62" font-family="Arial,sans-serif" font-size="15" font-weight="900" fill="url(#textGrad)" text-anchor="middle" letter-spacing="3">FANATIC</text>
-  <text x="70" y="82" font-family="Arial,sans-serif" font-size="15" font-weight="900" fill="url(#textGrad)" text-anchor="middle" letter-spacing="3">IMPORTS</text>
-  <line x1="20" y1="70" x2="120" y2="70" stroke="rgba(200,200,200,0.15)" stroke-width="0.5"/>
-  <line x1="70" y1="20" x2="70" y2="120" stroke="rgba(200,200,200,0.15)" stroke-width="0.5"/>
-  <circle cx="70" cy="70" r="45" fill="none" stroke="rgba(200,200,200,0.08)" stroke-width="0.5"/>
-  <circle cx="70" cy="70" r="25" fill="none" stroke="rgba(200,200,200,0.08)" stroke-width="0.5"/>
-</svg>
-  <div class="r-sweep"></div>
-  <div class="r-glow"></div>
+
+<!-- ════════ HERO ════════ -->
+<section id="hero">
+  <div class="logo-ring">
+    <img src="data:image/png;base64,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" alt="Fanatic Imports">
+    <div class="logo-overlay"></div>
+    <div class="logo-cross-h"></div>
+    <div class="logo-cross-v"></div>
+    <div class="logo-sweep"></div>
+    <div class="logo-glow"></div>
+  </div>
+
+  <h1 class="brand-name">Fanatic Imports</h1>
+  <p class="brand-tagline">Camisas Oficiais &middot; Entrega para todo o Brasil</p>
+
+  <div class="hero-stats">
+    <div class="h-stat"><div class="h-stat-num" data-target="500">0</div><div class="h-stat-label">Clientes</div></div>
+    <div class="h-stat" style="border-left:1px solid rgba(200,200,200,0.1);border-right:1px solid rgba(200,200,200,0.1);padding:0 32px"><div class="h-stat-num" data-target="60">0</div><div class="h-stat-label">Times</div></div>
+    <div class="h-stat"><div class="h-stat-num" data-target="100">0</div><div class="h-stat-label">% Qualidade</div></div>
+  </div>
+
+  <div class="hero-cta-box">
+    <p class="cta-label">Escolha seu atendente</p>
+    <a class="wa-cta" href="https://wa.me/5579988492904?text=Ol%C3%A1%20Carlos!%20Vi%20a%20Fanatic%20Imports%20e%20quero%20ver%20o%20cat%C3%A1logo!" target="_blank" rel="noopener">
+      <div class="online-dot"></div>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <div class="wa-cta-info"><span class="wa-cta-name">Carlos</span><span class="wa-cta-sub">Online agora &bull; Resposta imediata</span></div>
+    </a>
+    <a class="wa-cta vitor" href="https://wa.me/5579996834445?text=Ol%C3%A1%20Vitor!%20Vi%20a%20Fanatic%20Imports%20e%20quero%20ver%20o%20cat%C3%A1logo!" target="_blank" rel="noopener">
+      <div class="online-dot"></div>
+      <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <div class="wa-cta-info"><span class="wa-cta-name">Vitor</span><span class="wa-cta-sub">Online agora &bull; Resposta imediata</span></div>
+    </a>
+  </div>
+</section>
+
+<div class="section-divider"><div class="line"></div><span>&#9660;</span><div class="line"></div></div>
+
+<!-- ════════ STATS ════════ -->
+<div id="stats" style="position:relative;z-index:2">
+  <div class="stats-row reveal">
+    <div class="stat-block"><div class="stat-num" data-target="500">0</div><span class="stat-plus">+</span><div class="stat-label">Clientes</div></div>
+    <div class="stat-block"><div class="stat-num" data-target="60">0</div><span class="stat-plus">+</span><div class="stat-label">Times</div></div>
+    <div class="stat-block"><div class="stat-num" data-target="100">0</div><span class="stat-pct">%</span><div class="stat-label">Qualidade</div></div>
+  </div>
 </div>
-  <h1 class="hero-title">Fanatic Imports</h1>
-  <p class="hero-sub">Camisas de Time &amp; Sele&ccedil;&otilde;es</p>
-  <div class="hero-divider"></div>
+
+<!-- ════════ SOBRE ════════ -->
+<section>
+  <p class="sec-eyebrow reveal">Nossa miss&atilde;o</p>
+  <h2 class="sec-title reveal d1">Paix&atilde;o pelo<br>futebol em<br>cada detalhe</h2>
+  <div class="thin-line reveal d2"></div>
+  <p class="sec-text reveal d2">Na <strong>Fanatic Imports</strong>, cada camisa conta uma hist&oacute;ria. Importamos diretamente dos melhores fornecedores do mundo para garantir autenticidade, qualidade premium e entrega r&aacute;pida para <strong>qualquer lugar do Brasil</strong>.</p>
 </section>
-<section id="sobre" style="z-index:2">
-  <p class="sec-label reveal">Nossa miss&atilde;o</p>
-  <h2 class="sec-title reveal delay-1">Paix&atilde;o pelo<br>futebol em<br>cada detalhe</h2>
-  <div class="thin-divider reveal delay-2"></div>
-  <p class="sec-text reveal delay-2">Na <strong>Fanatic Imports</strong>, cada camisa conta uma hist&oacute;ria. Trabalhamos com times e sele&ccedil;&otilde;es do mundo inteiro para trazer at&eacute; voc&ecirc; <strong>qualidade real</strong>, entrega r&aacute;pida para todo o Brasil e atendimento que vai al&eacute;m da venda.</p>
-</section>
-<section id="stats" style="padding-top:0;z-index:2">
-  <div class="stats-wrap reveal">
-    <div style="text-align:center"><div class="stat-num" data-target="500">0</div><div style="font-size:22px;color:var(--silver);margin-top:-8px">+</div><div class="stat-label">Clientes</div></div>
-    <div style="text-align:center"><div class="stat-num" data-target="60">0</div><div style="font-size:22px;color:var(--silver);margin-top:-8px">+</div><div class="stat-label">Times</div></div>
-    <div style="text-align:center"><div class="stat-num" data-target="100">0</div><div style="font-size:22px;color:var(--silver);margin-top:-8px">%</div><div class="stat-label">Qualidade</div></div>
-  </div>
-</section>
-<section id="features" style="z-index:2">
-  <p class="sec-label reveal">Por que escolher a gente</p>
-  <h2 class="sec-title reveal delay-1">O que nos<br>diferencia</h2>
+
+<!-- ════════ DIFERENCIAIS ════════ -->
+<section>
+  <p class="sec-eyebrow reveal">Por que nos escolher</p>
+  <h2 class="sec-title reveal d1">O que nos<br>diferencia</h2>
   <div class="feat-grid">
-    <div class="feat-card reveal delay-1"><span class="feat-icon">&#127949;</span><p class="feat-name">Times do mundo todo</p><p class="feat-desc">Clubes e sele&ccedil;&otilde;es nacionais e internacionais</p></div>
-    <div class="feat-card reveal delay-2"><span class="feat-icon">&#128026;</span><p class="feat-name">Entrega nacional</p><p class="feat-desc">Para todo o Brasil com rastreamento</p></div>
-    <div class="feat-card reveal delay-3"><span class="feat-icon">&#10005;</span><p class="feat-name">Qualidade garantida</p><p class="feat-desc">Produto id&ecirc;ntico &agrave; foto, sempre</p></div>
-    <div class="feat-card reveal delay-4"><span class="feat-icon">&#9889;</span><p class="feat-name">Resposta imediata</p><p class="feat-desc">Atendimento r&aacute;pido no WhatsApp</p></div>
+    <div class="feat-card reveal d1">
+      <span class="feat-icon">&#9917;</span>
+      <p class="feat-name">Times do mundo todo</p>
+      <p class="feat-desc">Clubes e sele&ccedil;&otilde;es nacionais e internacionais</p>
+    </div>
+    <div class="feat-card reveal d2">
+      <span class="feat-icon">&#128246;</span>
+      <p class="feat-name">Entrega nacional</p>
+      <p class="feat-desc">Enviamos para todo o Brasil com rastreamento</p>
+    </div>
+    <div class="feat-card reveal d3">
+      <span class="feat-icon">&#9989;</span>
+      <p class="feat-name">Qualidade garantida</p>
+      <p class="feat-desc">Produto id&ecirc;ntico &agrave; foto, garantia real</p>
+    </div>
+    <div class="feat-card reveal d4">
+      <span class="feat-icon">&#9889;</span>
+      <p class="feat-name">Atendimento &aacute;gil</p>
+      <p class="feat-desc">Resposta r&aacute;pida no WhatsApp, sem enrolação</p>
+    </div>
   </div>
 </section>
-<section id="team" style="z-index:2">
-  <div class="team-header">
-    <p class="sec-label reveal">Fale com a gente</p>
-    <h2 class="sec-title reveal delay-1">Nossos<br>atendentes</h2>
-    <p class="sec-text reveal delay-2" style="font-size:13px">Chama um dos nossos atendentes e receba o cat&aacute;logo completo na hora!</p>
-  </div>
-  <div class="agents-row">
-    <a class="agent-card reveal delay-1" href="https://wa.me/5579988492904?text=Ol%C3%A1%20Carlos!%20Vi%20a%20Fanatic%20Imports%20e%20quero%20ver%20o%20cat%C3%A1logo!" target="_blank" rel="noopener">
-      <div style="position:relative"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#222,#333);display:flex;align-items:center;justify-content:center;font-size:32px">&#128100;</div><div class="online"></div></div>
-      <p class="agent-name">Carlos</p><p class="agent-role">Atendente</p>
-      <div class="wa-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</div>
+
+<!-- ════════ ATENDENTES ════════ -->
+<section>
+  <p class="sec-eyebrow reveal">Fale com a gente</p>
+  <h2 class="sec-title reveal d1">Nossos<br>atendentes</h2>
+  <p class="sec-text reveal d2" style="margin-bottom:24px;font-size:13px">Chama um dos nossos especialistas e receba o cat&aacute;logo completo na hora. Atendimento personalizado, sem rob&ocirc;s.</p>
+  <div class="agents-grid reveal d3">
+    <a class="agent-card" href="https://wa.me/5579988492904?text=Ol%C3%A1%20Carlos!%20Vi%20a%20Fanatic%20Imports%20e%20quero%20ver%20o%20cat%C3%A1logo!" target="_blank" rel="noopener">
+      <div class="agent-avatar">&#128100;<div class="agent-online"></div></div>
+      <p class="agent-name">Carlos</p>
+      <p class="agent-role">Especialista</p>
+      <div class="agent-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </div>
     </a>
-    <a class="agent-card reveal delay-2" href="https://wa.me/5579996834445?text=Ol%C3%A1%20Vitor!%20Vi%20a%20Fanatic%20Imports%20e%20quero%20ver%20o%20cat%C3%A1logo!" target="_blank" rel="noopener">
-      <div style="position:relative"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#222,#333);display:flex;align-items:center;justify-content:center;font-size:32px">&#128100;</div><div class="online"></div></div>
-      <p class="agent-name">Vitor</p><p class="agent-role">Atendente</p>
-      <div class="wa-btn"><svg viewBox="0 0 .074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</div>
+    <a class="agent-card" href="https://wa.me/5579996834445?text=Ol%C3%A1%20Vitor!%20Vi%20a%20Fanatic%20Imports%20e%20quero%20ver%20o%20cat%C3%A1logo!" target="_blank" rel="noopener">
+      <div class="agent-avatar">&#128100;<div class="agent-online"></div></div>
+      <p class="agent-name">Vitor</p>
+      <p class="agent-role">Especialista</p>
+      <div class="agent-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </div>
     </a>
   </div>
 </section>
-<footer style="z-index:2;position:relative">
+
+<footer>
   <p class="footer-logo reveal">Fanatic Imports</p>
-  <p class="footer-sub reveal delay-1">Camisas de Time &amp; Sele&ccedil;&otilde;es &middot; Todo o Brasil</p>
+  <p class="footer-sub reveal d1">Camisas Oficiais &bull; Qualidade Real &bull; Todo o Brasil</p>
 </footer>
+
 <script>
-const canvas=document.getElementById('bg');const ctx=canvas.getContext('2d');let W,H,pts=[];function resize(){W=canvas.width=innerWidth;H=canvas.height=innerHeight}resize();window.addEventListener('resize',resize);for(let i=0;i<60;i++)pts.push({x:Math.random()*2000,y:Math.random()*2000,sx:(Math.random()-.5)*.18,sy:(Math.random()-.5)*.18,r:Math.random()*1.2+.3,o:Math.random()*.4+.05,p:Math.random()*6.28,ps:Math.random()*.008+.003});let sy=0;window.addEventListener('scroll',()=>sy=scrollY,{passive:true});function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.sx;p.y+=p.sy;p.p+=p.ps;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<-sy)p.y=H-sy;if(p.y>H-sy)p.y=-sy;ctx.beginPath();ctx.arc(p.x,p.y+sy*.15,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(200,200,200,${p.o*(.7+.3*Math.sin(p.p))})`;ctx.fill()});requestAnimationFrame(draw)}draw();
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.15});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-const statObs=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.querySelectorAll('[data-target]').forEach(el=>{const t=+el.dataset.target;const s=performance.now();function step(n){const p=Math.min((n-s)/1800,1);el.textContent=Math.floor((1-Math.pow(1-p,4))*t);if(p<1)requestAnimationFrame(step);else el.textContent=t}requestAnimationFrame(step)});statObs.unobserve(e.target)}),{threshold:.4});document.querySelectorAll('.stats-wrap').forEach(el=>statObs.observe(el));
+// Partículas
+const cv=document.getElementById('bg'),ctx=cv.getContext('2d');
+let W,H,pts=[];
+function resize(){W=cv.width=innerWidth;H=cv.height=innerHeight}
+resize();window.addEventListener('resize',resize);
+for(let i=0;i<50;i++)pts.push({x:Math.random()*2000,y:Math.random()*2000,sx:(Math.random()-.5)*.15,sy:(Math.random()-.5)*.15,r:Math.random()*1.2+.2,o:Math.random()*.3+.04,p:Math.random()*6.28,ps:Math.random()*.006+.002});
+let sy=0;window.addEventListener('scroll',()=>sy=scrollY,{passive:true});
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  pts.forEach(p=>{
+    p.x+=p.sx;p.y+=p.sy;p.p+=p.ps;
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+    if(p.y<-sy)p.y=H-sy;if(p.y>H-sy)p.y=-sy;
+    ctx.beginPath();ctx.arc(p.x,p.y+sy*.12,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(200,200,200,${p.o*(.7+.3*Math.sin(p.p))})`;ctx.fill();
+  });
+  requestAnimationFrame(draw);
+}draw();
+
+// Reveal
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Counters hero
+const statObs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.querySelectorAll('[data-target]').forEach(el=>{
+    const t=+el.dataset.target,s=performance.now();
+    function step(n){const p=Math.min((n-s)/1600,1);el.textContent=Math.floor((1-Math.pow(1-p,4))*t);if(p<1)requestAnimationFrame(step);else el.textContent=t}
+    requestAnimationFrame(step);
+  });
+  statObs.unobserve(e.target);
+}),{threshold:.3});
+document.querySelectorAll('.stats-row,.hero-stats').forEach(el=>statObs.observe(el));
 </script>
 </body>
 </html>
